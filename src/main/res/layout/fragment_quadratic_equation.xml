@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+
+    tools:context=".ui.quadraticequation.QuadraticEquationFragment">
+
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        tools:layout_editor_absoluteX="102dp"
+        android:layout_marginTop="20dp"
+
+        tools:layout_editor_absoluteY="52dp">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <EditText
+                android:id="@+id/editTextAx"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+
+                android:hint="ax2"
+                android:drawablePadding="8dp"
+                android:layout_column="1"
+                android:inputType="numberSigned"/>
+
+            <EditText
+                android:id="@+id/editTextBx"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_column="2"
+
+                android:layout_marginTop="0dp"
+                android:drawablePadding="8dp"
+                android:hint="bx"
+                android:inputType="numberSigned" />
+            <EditText
+                android:id="@+id/editTextC"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+
+                android:hint="c"
+                android:drawablePadding="8dp"
+                android:layout_column="3"
+                android:inputType="numberSigned"/>
+        </TableRow>
+
+    </TableLayout>
+            <Button
+                android:id="@+id/btCalculate"
+                android:layout_column="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:background="@color/teal_700"
+                android:text="Calculate" />
+
+            <Button
+                android:id="@+id/btReset"
+                android:layout_column="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Clear" />
+
+    <TextView
+        android:id="@+id/equationResult"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="25dp"
+        android:textAlignment="center"
+        />
+    <TextView
+        android:id="@+id/equationResult1"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="25dp"
+        android:textAlignment="center"
+        />
+    <TextView
+        android:id="@+id/deltaResult"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:textAlignment="textStart"
+        />
+    <TextView
+        android:id="@+id/x1Result"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:textAlignment="textStart"
+        />
+    <TextView
+        android:id="@+id/x2Result"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:textAlignment="textStart"
+        />
+</LinearLayout>

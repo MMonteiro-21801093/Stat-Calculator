@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+
+    tools:context=".ui.centraltrend.CentralTrendFragment">
+
+    <TextView
+        android:id="@+id/lblInsert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:text="E.g:23,7,9,12" />
+    <EditText
+        android:id="@+id/editTextInsert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine" />
+
+    <Button
+        android:id="@+id/btCalculate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/teal_700"
+        android:text="Calculate" />
+    <Button
+        android:id="@+id/btReset"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Reset" />
+    <TextView
+        android:id="@+id/lblTotaNumbers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+
+        android:text="Total Numbers" />
+    <TextView
+        android:id="@+id/resultTotaNumbers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:background="@color/grey"
+         />
+
+    <TextView
+        android:id="@+id/lblMean"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:text="Mean" />
+
+    <TextView
+        android:id="@+id/resultMean"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:background="@color/grey"
+        />
+    <TextView
+        android:id="@+id/lblMedian"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:text="Median" />
+
+    <TextView
+        android:id="@+id/resultMedian"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:background="@color/grey"
+        />
+    <TextView
+        android:id="@+id/lblStandardDeviation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:text="Standard Deviation" />
+
+    <TextView
+        android:id="@+id/resultStandardDeviation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:background="@color/grey"
+        />
+    <TextView
+        android:id="@+id/lblRange"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:text="Range" />
+    <TextView
+        android:id="@+id/resultRange"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:background="@color/grey"
+        />
+    <TextView
+        android:id="@+id/lblMin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:text="Min" />
+    <TextView
+        android:id="@+id/resultMin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:background="@color/grey"
+        />
+    <TextView
+        android:id="@+id/lblMax"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:text="Max" />
+    <TextView
+        android:id="@+id/resultMax"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:background="@color/grey"
+        />
+    <TextView
+        android:id="@+id/lblTotalSum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:text="Total Sum" />
+    <TextView
+        android:id="@+id/resulTotalSum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:background="@color/grey"
+        />
+</LinearLayout>
