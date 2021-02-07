@@ -22,4 +22,9 @@
         android:name="com.example.statscalculator.ui.quadraticequation.QuadraticEquationFragment"
         android:label="@string/menu_quadratic_equation"
         tools:layout="@layout/fragment_quadratic_equation" />
+    <fragment
+        android:id="@+id/nav_anova"
+        android:name="com.example.statscalculator.ui.anova.AnovaFragment"
+        android:label="@string/menu_anova"
+        tools:layout="@layout/fragment_anova" />
 </navigation>

@@ -9,6 +9,7 @@
 
     <string name="menu_centraltrend">Central Trend</string>
     <string name="menu_gallery">Matrix</string>
+    <string name="menu_anova">ANOVA</string>
     <string name="menu_quadratic_equation">Quadratic equation</string>
     <string name="error_message01">Mandatory value</string>
     <string name="error_message02">Δ lesser 0, so the equation has no real results</string>

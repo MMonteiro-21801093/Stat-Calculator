@@ -37,7 +37,8 @@ class MainActivity : AppCompatActivity() {
         appBarConfiguration = AppBarConfiguration(setOf(
             R.id.nav_centraltrend,
             R.id.nav_matrices,
-            R.id.nav_quadratic_equation
+            R.id.nav_quadratic_equation,
+            R.id.nav_anova
         ), drawerLayout)
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
