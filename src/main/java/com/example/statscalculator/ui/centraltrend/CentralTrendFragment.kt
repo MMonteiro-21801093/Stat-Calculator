@@ -9,6 +9,7 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.statscalculator.R
 
@@ -21,7 +22,7 @@ import com.example.statscalculator.R
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        centralTrendViewModel =ViewModelProvider(this).get(CentralTrendViewModel::class.java)
+         centralTrendViewModel =ViewModelProvider(this).get(CentralTrendViewModel::class.java)
 
             root = inflater.inflate(R.layout.fragment_centraltrend, container, false)
 
@@ -30,8 +31,44 @@ import com.example.statscalculator.R
         val btReset = root.findViewById<View>(R.id.btReset) as Button
         btCalculate.setOnClickListener(this)
         btReset.setOnClickListener(this)
+
+        val resultMean:TextView = root.findViewById(R.id.resultMean)
+        centralTrendViewModel.resultMean.observe(viewLifecycleOwner, Observer {
+            resultMean.text = it
+        })
+        val resultTotalNumbers:TextView = root.findViewById(R.id.resultTotalNumbers)
+        centralTrendViewModel.resultTotalNumbers.observe(viewLifecycleOwner, Observer {
+            resultTotalNumbers.text = it
+        })
+        val resultRange:TextView = root.findViewById(R.id.resultRange)
+        centralTrendViewModel.resultRange.observe(viewLifecycleOwner, Observer {
+            resultRange.text = it
+        })
+        val resultStandardDeviation:TextView = root.findViewById(R.id.resultStandardDeviation)
+        centralTrendViewModel.resultStandardDeviation.observe(viewLifecycleOwner, Observer {
+            resultStandardDeviation.text = it
+        })
+        val resultMedian:TextView = root.findViewById(R.id.resultMedian)
+        centralTrendViewModel.resultMedian.observe(viewLifecycleOwner, Observer {
+            resultMedian.text = it
+        })
+        val resultMin:TextView = root.findViewById(R.id.resultMin)
+        centralTrendViewModel.resultMin.observe(viewLifecycleOwner, Observer {
+            resultMin.text = it
+        })
+        val resultMax:TextView = root.findViewById(R.id.resultMax)
+        centralTrendViewModel.resultMax.observe(viewLifecycleOwner, Observer {
+            resultMax.text = it
+        })
+        val resulTotalSum:TextView = root.findViewById(R.id.resulTotalSum)
+        centralTrendViewModel.resulTotalSum.observe(viewLifecycleOwner, Observer {
+            resulTotalSum.text = it
+        })
         return root
     }
+
+
+
      private fun validateFields(): Boolean {
          if ( editTextInsert.text.length > 0)   {
              return true
@@ -55,45 +92,21 @@ import com.example.statscalculator.R
      }
 
      private fun intializeFields() {
-         val editTextTotalNumbers:TextView =  root.findViewById(R.id.resultTotaNumbers)
-         val editTextMean:TextView = root.findViewById(R.id.resultMean)
-         val resultRange:TextView = root.findViewById(R.id.resultRange)
-         val resultStandardDeviation:TextView = root.findViewById(R.id.resultStandardDeviation)
-         val resultMedian:TextView = root.findViewById(R.id.resultMedian)
-         val resultMin:TextView = root.findViewById(R.id.resultMin)
-         val resultMax:TextView = root.findViewById(R.id.resultMax)
-         val resulTotalSum:TextView = root.findViewById(R.id.resulTotalSum)
          editTextInsert.setText("")
-         editTextTotalNumbers.text = ""
-         editTextMean.text = ""
-         resultRange.text = ""
-         resultStandardDeviation.text = ""
-         resultMedian.text = ""
-         resultMin.text =""
-         resultMax.text =""
-         resulTotalSum.text = ""
+         centralTrendViewModel.intializeFields()
      }
 
 
      private fun calculateCentralTrend() {
-             val editTextTotalNumbers:TextView =  root.findViewById(R.id.resultTotaNumbers)
-             val editTextMean:TextView = root.findViewById(R.id.resultMean)
-             val resultRange:TextView = root.findViewById(R.id.resultRange)
-             val resultStandardDeviation:TextView = root.findViewById(R.id.resultStandardDeviation)
-             val resultMedian:TextView = root.findViewById(R.id.resultMedian)
-             val resultMin:TextView = root.findViewById(R.id.resultMin)
-             val resultMax:TextView = root.findViewById(R.id.resultMax)
-             val resulTotalSum:TextView = root.findViewById(R.id.resulTotalSum)
-
              val arrNumbers: List<String> = editTextInsert.text.split(",")
-             editTextTotalNumbers.text = arrNumbers.size.toString()
-             editTextMean.text = centralTrendViewModel.getMean(arrNumbers)
-             resultRange.text = centralTrendViewModel.getRange(arrNumbers)
-             resultStandardDeviation.text = centralTrendViewModel.getStandardDeviation(arrNumbers)
-             resultMedian.text = centralTrendViewModel.getMedian(arrNumbers)
-             resultMin.text = centralTrendViewModel.getMin(arrNumbers)
-             resultMax.text = centralTrendViewModel.getMax(arrNumbers)
-             resulTotalSum.text = centralTrendViewModel.getTotalSum(arrNumbers)
+             centralTrendViewModel.getTotalNumbers(arrNumbers.size.toString())
+             centralTrendViewModel.getMean(arrNumbers)
+             centralTrendViewModel.getRange(arrNumbers)
+             centralTrendViewModel.getStandardDeviation(arrNumbers)
+             centralTrendViewModel.getMedian(arrNumbers)
+             centralTrendViewModel.getMin(arrNumbers)
+             centralTrendViewModel.getMax(arrNumbers)
+             centralTrendViewModel.getTotalSum(arrNumbers)
      }
 
 
